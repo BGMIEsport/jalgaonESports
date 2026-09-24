@@ -6,1611 +6,955 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#07080c">
+<meta name="theme-color" content="#0b0b0f">
 
 <meta name="description"
-      content="Jalgaon BGMI Showdown 2026 - Squad, Duo and Solo Tournament">
+      content="Jalgaon BGMI Tournament 2026 - Register now and battle for the prize pool.">
 
-<title>Jalgaon BGMI Showdown 2026</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap"
-rel="stylesheet">
+<title>Jalgaon BGMI Tournament 2026</title>
 
 <style>
 
-:root{
-    --bg:#07080c;
-    --panel:#10121a;
-    --panel2:#151824;
-    --line:#292d3a;
-    --text:#f5f7fb;
-    --muted:#aab0c0;
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-    --orange:#ff6b00;
-    --orange2:#ff9d1e;
-    --gold:#ffbd3d;
-    --red:#ff3b30;
-    --green:#31d17c;
-
-    --radius:22px;
-
-    --shadow:
-    0 18px 55px rgba(0,0,0,.42);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    margin:0;
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
     background:
-    radial-gradient(
-        circle at 15% 0%,
-        rgba(255,107,0,.16),
-        transparent 32rem
-    ),
-    radial-gradient(
-        circle at 90% 20%,
-        rgba(255,189,61,.10),
-        transparent 28rem
-    ),
-    var(--bg);
-
-    color:var(--text);
-
-    font-family:
-    Inter,
-    Arial,
-    sans-serif;
-
-    line-height:1.55;
+        radial-gradient(circle at top, #2a1600 0%, #0b0b0f 40%),
+        #0b0b0f;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-button{
-    font-family:inherit;
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
-.container{
-    width:min(1180px,92%);
-    margin:auto;
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-
-    background:
-    rgba(7,8,12,.86);
-
-    backdrop-filter:blur(16px);
-
-    border-bottom:
-    1px solid rgba(255,255,255,.07);
+section {
+    padding: 70px 0;
 }
 
-.nav{
-    height:72px;
+/* =========================================================
+   HEADER
+========================================================= */
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:18px;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(8, 8, 12, 0.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 166, 0, 0.25);
 }
 
-.logo{
-    font-family:Rajdhani,sans-serif;
-
-    font-size:24px;
-    font-weight:900;
-
-    letter-spacing:.8px;
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.logo b{
-    color:var(--orange);
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-.navlinks{
-    display:flex;
-    gap:20px;
-
-    font-size:14px;
-
-    color:#d7d9e1;
+.logo span {
+    color: #ffae00;
 }
 
-.navlinks a:hover{
-    color:var(--gold);
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
 }
 
-.navbtn{
-    padding:9px 15px;
-
-    border:
-    1px solid #3a3d49;
-
-    border-radius:12px;
+.nav-links a {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 700;
 }
 
+.nav-links a:hover {
+    color: #ffae00;
+}
 
-/* =========================
+@media(max-width: 750px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+}
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
-.hero{
-    padding:70px 0 35px;
-
-    position:relative;
-
-    overflow:hidden;
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.heroGrid{
-    display:grid;
-
-    grid-template-columns:
-    1.05fr .95fr;
-
-    gap:34px;
-
-    align-items:center;
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #ff9800;
+    opacity: 0.08;
+    filter: blur(100px);
+    border-radius: 50%;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.badge{
-    display:inline-flex;
-
-    gap:8px;
-
-    align-items:center;
-
-    padding:8px 12px;
-
-    border:
-    1px solid #3a2b1e;
-
-    background:#17120e;
-
-    color:#ffbf67;
-
-    border-radius:999px;
-
-    font-size:12px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-h1{
-    font-family:Rajdhani,sans-serif;
-
-    font-size:
-    clamp(48px,8vw,88px);
-
-    line-height:.9;
-
-    margin:18px 0 16px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: rgba(255, 166, 0, 0.12);
+    border: 1px solid rgba(255, 166, 0, 0.4);
+    color: #ffb300;
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 20px;
 }
 
-h1 span{
-    color:var(--orange);
-
-    text-shadow:
-    0 0 28px rgba(255,107,0,.28);
+.hero h1 {
+    font-size: clamp(42px, 8vw, 88px);
+    line-height: 0.95;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: -3px;
 }
 
-.hero p{
-    font-size:18px;
-
-    color:#c5c9d4;
-
-    max-width:680px;
+.hero h1 span {
+    color: #ffae00;
+    text-shadow: 0 0 30px rgba(255, 174, 0, 0.3);
 }
 
-.actions{
-    display:flex;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
-    margin:26px 0;
+.hero-subtitle {
+    margin: 25px auto;
+    max-width: 700px;
+    color: #cfcfcf;
+    font-size: 18px;
 }
 
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border:0;
-
-    border-radius:13px;
-
-    padding:14px 18px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    transition:.2s;
+.location {
+    color: #ffbf3c;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #ddd;
 }
 
-.primary{
-    background:
-    linear-gradient(
-        135deg,
-        var(--orange),
-        var(--orange2)
-    );
-
-    color:#140a02;
-
-    box-shadow:
-    0 12px 30px
-    rgba(255,107,0,.22);
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 650px;
+    margin: 0 auto 30px;
 }
 
-.secondary{
-    background:#161923;
-
-    color:white;
-
-    border:
-    1px solid #343845;
+.time-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,166,0,0.25);
+    border-radius: 16px;
+    padding: 18px 10px;
 }
 
-
-/* =========================
-   ORIGINAL GAMING ART
-========================= */
-
-.heroArt{
-
-    min-height:390px;
-
-    position:relative;
-
-    border:
-    1px solid #292d3a;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #141722,
-        #090a0f
-    );
-
-    box-shadow:var(--shadow);
-
-    overflow:hidden;
+.time-box strong {
+    display: block;
+    font-size: 35px;
+    color: #ffae00;
 }
 
-.heroArt:before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-30%;
-
-    background:
-    conic-gradient(
-        from 90deg,
-        transparent,
-        #ff6b00,
-        transparent 30%,
-        #ffbd3d,
-        transparent 60%
-    );
-
-    filter:blur(55px);
-
-    opacity:.14;
+.time-box span {
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
-.screen{
+@media(max-width: 500px) {
 
-    position:absolute;
+    .countdown {
+        gap: 6px;
+    }
 
-    inset:25px;
+    .time-box {
+        padding: 12px 5px;
+    }
 
-    border:
-    1px solid #363a48;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        180deg,
-        #171a26,
-        #0d0f15
-    );
-
-    overflow:hidden;
+    .time-box strong {
+        font-size: 25px;
+    }
 }
 
-.moon{
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-    position:absolute;
-
-    width:100px;
-    height:100px;
-
-    border-radius:50%;
-
-    right:45px;
-    top:35px;
-
-    background:#ffd98b;
-
-    box-shadow:
-    0 0 60px
-    rgba(255,189,61,.25);
+.btn-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.hill{
-
-    position:absolute;
-
-    left:-10%;
-    right:-10%;
-
-    bottom:-50px;
-
-    height:210px;
-
-    background:#0a0b10;
-
-    clip-path:
-    polygon(
-        0 70%,
-        18% 42%,
-        33% 61%,
-        49% 27%,
-        64% 55%,
-        78% 34%,
-        100% 60%,
-        100% 100%,
-        0 100%
-    );
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.character{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:35px;
-
-    transform:
-    translateX(-50%);
-
-    font-size:130px;
-
-    filter:
-    drop-shadow(
-        0 15px 12px
-        rgba(0,0,0,.6)
-    );
+.btn:hover {
+    transform: translateY(-2px);
 }
 
-.memeBubble{
-
-    position:absolute;
-
-    right:22px;
-
-    bottom:25px;
-
-    background:white;
-
-    color:#111;
-
-    padding:10px 14px;
-
-    border-radius:15px;
-
-    font-weight:900;
-
-    font-size:13px;
-
-    transform:rotate(-3deg);
+.btn-primary {
+    background: #ffae00;
+    color: #111;
 }
 
-
-/* =========================
-   STATS
-========================= */
-
-.stats{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:12px;
-
-    margin:
-    25px 0 50px;
+.btn-secondary {
+    background: #1c1c24;
+    border: 1px solid #444;
+    color: white;
 }
 
-.stat{
-
-    padding:18px;
-
-    background:
-    rgba(16,18,26,.78);
-
-    border:
-    1px solid var(--line);
-
-    border-radius:18px;
-
-    text-align:center;
+.btn-success {
+    background: #20b866;
+    color: white;
 }
 
-.stat strong{
-
-    display:block;
-
-    font-size:26px;
-
-    color:var(--gold);
+.btn-danger {
+    background: #e74c3c;
+    color: white;
 }
 
-.stat small{
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
-    color:var(--muted);
-
-    font-weight:700;
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-    padding:55px 0;
+.section-heading .small {
+    color: #ffae00;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.sectionTitle{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    align-items:end;
-
-    margin-bottom:22px;
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    margin-top: 8px;
 }
 
-.eyebrow{
-
-    color:var(--orange);
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    font-size:12px;
-}
-
-h2{
-
-    font-family:Rajdhani,sans-serif;
-
-    text-transform:uppercase;
-
-    font-size:42px;
-
-    line-height:1;
-
-    margin:6px 0;
-}
-
-.sub{
-
-    color:var(--muted);
-
-    max-width:700px;
-}
-
-
-/* =========================
+/* =========================================================
    MATCH CARDS
-========================= */
+========================================================= */
 
-.matches{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,1fr);
-
-    gap:12px;
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
 }
 
-.match{
-
-    background:
-    linear-gradient(
-        180deg,
-        #141722,
-        #0e1016
-    );
-
-    border:
-    1px solid var(--line);
-
-    border-radius:18px;
-
-    padding:18px;
-
-    min-height:175px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    transition:.2s;
+.match-card {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+    transition: 0.2s;
 }
 
-.match:hover{
-
-    transform:
-    translateY(-5px);
-
-    border-color:
-    rgba(255,107,0,.55);
+.match-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,166,0,0.5);
 }
 
-.match:after{
-
-    content:"";
-
-    position:absolute;
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    right:-35px;
-    bottom:-35px;
-
-    background:
-    rgba(255,107,0,.12);
+.match-icon {
+    font-size: 40px;
 }
 
-.match .emoji{
-
-    font-size:32px;
+.match-card h3 {
+    margin: 12px 0 5px;
 }
 
-.match b{
-
-    display:block;
-
-    font-size:17px;
-
-    margin:8px 0;
+.match-card p {
+    color: #aaa;
+    font-size: 13px;
 }
 
-.price{
-
-    color:var(--gold);
-
-    font-weight:900;
+.price {
+    color: #ffae00 !important;
+    font-size: 20px !important;
+    font-weight: 900;
+    margin-top: 10px;
 }
 
-.players{
-
-    color:var(--muted);
-
-    font-size:12px;
+@media(max-width: 950px) {
+    .matches-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-
-/* =========================
-   FORM
-========================= */
-
-.grid2{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:18px;
+@media(max-width: 500px) {
+    .matches-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.card{
+/* =========================================================
+   REGISTRATION
+========================================================= */
 
-    background:
-    rgba(16,18,26,.84);
-
-    border:
-    1px solid var(--line);
-
-    border-radius:var(--radius);
-
-    padding:24px;
-
-    box-shadow:var(--shadow);
+.registration-box {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(15,15,20,0.9);
+    border: 1px solid rgba(255,166,0,0.25);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 70px rgba(0,0,0,0.3);
 }
 
-.formGrid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:13px;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
-label{
+.form-group {
+    margin-bottom: 5px;
+}
 
-    display:block;
+.form-group.full {
+    grid-column: 1 / -1;
+}
 
-    font-size:12px;
-
-    color:#bfc4d0;
-
-    font-weight:800;
-
-    margin:
-    0 0 6px;
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ddd;
+    margin-bottom: 7px;
 }
 
 input,
 select,
-textarea{
-
-    width:100%;
-
-    border:
-    1px solid #343845;
-
-    background:#0b0d13;
-
-    color:white;
-
-    border-radius:12px;
-
-    padding:13px;
-
-    outline:none;
-
-    font:inherit;
+textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 11px;
+    border: 1px solid #33343d;
+    background: #101116;
+    color: white;
+    outline: none;
 }
 
 input:focus,
 select:focus,
-textarea:focus{
-
-    border-color:
-    var(--orange);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(255,107,0,.09);
+textarea:focus {
+    border-color: #ffae00;
 }
 
-.full{
-
-    grid-column:
-    1 / -1;
+.player-box {
+    margin-top: 18px;
+    padding: 18px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid #292a32;
+    border-radius: 15px;
 }
 
-.playerBox{
-
-    border:
-    1px dashed #3a3e4b;
-
-    border-radius:15px;
-
-    padding:14px;
-
-    margin-top:10px;
+.player-title {
+    color: #ffae00;
+    font-weight: 900;
+    margin-bottom: 14px;
 }
 
-.playerBox h4{
-
-    margin:
-    0 0 10px;
-
-    color:var(--gold);
+.player-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 
+@media(max-width: 650px) {
 
-/* =========================
+    .form-grid,
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-box {
+        padding: 20px;
+    }
+}
+
+/* =========================================================
    PAYMENT
-========================= */
+========================================================= */
 
-.paybox{
-
-    display:grid;
-
-    grid-template-columns:
-    180px 1fr;
-
-    gap:22px;
-
-    align-items:center;
+.payment-card {
+    max-width: 550px;
+    margin: auto;
+    background: rgba(18,18,23,0.95);
+    border: 1px solid rgba(255,166,0,0.3);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
 }
 
-.qr{
-
-    width:180px;
-    height:180px;
-
-    background:white;
-
-    color:#111;
-
-    border-radius:16px;
-
-    padding:10px;
-
-    display:grid;
-
-    place-items:center;
-
-    text-align:center;
-
-    font-weight:900;
+.payment-card h3 {
+    font-size: 27px;
+    margin-bottom: 8px;
 }
 
-.qrPattern{
-
-    font-size:50px;
-
-    line-height:1;
+.payment-amount {
+    color: #ddd;
+    margin-bottom: 20px;
 }
 
-.upi{
-
-    font-family:monospace;
-
-    background:#0b0d13;
-
-    border:
-    1px solid #343845;
-
-    padding:12px;
-
-    border-radius:10px;
-
-    word-break:break-all;
+.payment-amount strong {
+    color: #ffae00;
+    font-size: 25px;
 }
 
-.notice{
-
-    padding:12px 14px;
-
-    border-left:
-    3px solid var(--orange);
-
-    background:#17120e;
-
-    color:#d9dbe2;
-
-    border-radius:9px;
-
-    font-size:13px;
+.qr-box {
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 20px;
 }
 
+.payment-qr {
+    width: 270px;
+    max-width: 70vw;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
 
-/* =========================
+.upi-label {
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.upi-id {
+    margin-top: 7px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #101116;
+    border: 1px solid #333;
+    word-break: break-all;
+    font-size: 14px;
+}
+
+.payment-buttons {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.payment-buttons button,
+.payment-buttons a {
+    width: 100%;
+}
+
+.payment-note {
+    margin-top: 18px;
+    color: #999;
+    font-size: 12px;
+}
+
+.security-note {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* =========================================================
    PRIZES
-========================= */
+========================================================= */
 
-.prizes{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
+.prize-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
-.prize{
-
-    padding:22px;
-
-    border:
-    1px solid var(--line);
-
-    border-radius:18px;
-
-    background:#11131b;
+.prize-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.prize h3{
-
-    margin-top:0;
-
-    color:var(--gold);
+.prize-card h3 {
+    color: #ffae00;
+    margin-bottom: 15px;
 }
 
-.bigPrize{
-
-    font-size:29px;
-
-    font-weight:900;
+.prize-card li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #ddd;
 }
 
-.prize li{
-
-    margin:8px 0;
-
-    color:#c9ccd5;
+@media(max-width: 750px) {
+    .prize-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* =========================================================
+   FUN SECTION
+========================================================= */
 
-/* =========================
-   FUNNY MEMES
-========================= */
-
-.memes{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
+.fun-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
-.meme{
-
-    min-height:190px;
-
-    border-radius:22px;
-
-    border:
-    1px solid var(--line);
-
-    padding:22px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
+.fun-card {
+    background: linear-gradient(
         145deg,
-        #151824,
-        #0c0e14
+        rgba(255,174,0,0.1),
+        rgba(255,255,255,0.03)
     );
-
-    transition:.2s;
+    border: 1px solid rgba(255,174,0,0.2);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
 }
 
-.meme:hover{
-
-    transform:
-    translateY(-4px);
-
-    border-color:
-    rgba(255,107,0,.5);
+.fun-card .emoji {
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 
-.meme .art{
-
-    font-size:72px;
-
-    float:right;
-
-    filter:
-    drop-shadow(
-        0 12px 12px
-        rgba(0,0,0,.4)
-    );
+.fun-card h3 {
+    margin-bottom: 8px;
 }
 
-.meme h3{
-
-    font-size:20px;
-
-    max-width:230px;
+.fun-card p {
+    color: #aaa;
 }
 
-.meme p{
-
-    color:#b8bdc9;
-
-    max-width:250px;
-
-    font-size:13px;
+@media(max-width: 750px) {
+    .fun-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* =========================================================
+   SUPPORT
+========================================================= */
 
-/* =========================
-   REELS
-========================= */
-
-.reels{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
+.support-card {
+    max-width: 750px;
+    margin: auto;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    padding: 30px;
+    text-align: center;
 }
 
-.reel{
-
-    min-height:250px;
-
-    border:
-    1px solid var(--line);
-
-    border-radius:22px;
-
-    padding:22px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-        150deg,
-        #19121a,
-        #0c0d13
-    );
+.support-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.reelArt{
-
-    font-size:70px;
-
-    margin-bottom:12px;
-}
-
-.reel h3{
-
-    font-size:20px;
-
-    margin:5px 0;
-}
-
-.reel p{
-
-    color:#aeb4c2;
-
-    font-size:13px;
-}
-
-.play{
-
-    display:inline-flex;
-
-    margin-top:12px;
-
-    padding:10px 14px;
-
-    border-radius:10px;
-
-    background:#ff6b00;
-
-    color:#160900;
-
-    font-weight:900;
-}
-
-
-/* =========================
+/* =========================================================
    RULES
-========================= */
+========================================================= */
 
-.rules{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:12px;
+.rules {
+    max-width: 800px;
+    margin: auto;
 }
 
-.rule{
-
-    display:flex;
-
-    gap:12px;
-
-    padding:15px;
-
-    border:
-    1px solid var(--line);
-
-    border-radius:15px;
-
-    background:#10121a;
+.rules li {
+    margin: 12px 0;
+    color: #ccc;
 }
 
-.num{
-
-    min-width:30px;
-
-    height:30px;
-
-    border-radius:50%;
-
-    display:grid;
-
-    place-items:center;
-
-    background:#2a1a0c;
-
-    color:var(--gold);
-
-    font-weight:900;
-}
-
-
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
-footer{
-
-    padding:
-    35px 0 55px;
-
-    border-top:
-    1px solid var(--line);
-
-    color:#9298a8;
+footer {
+    padding: 35px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    color: #777;
+    font-size: 13px;
 }
 
-.footerFlex{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    flex-wrap:wrap;
+.footer-admin {
+    margin-top: 8px;
+    color: #555;
 }
 
+/* =========================================================
+   MODAL
+========================================================= */
 
-/* =========================
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 500px;
+    background: #15151c;
+    border: 1px solid rgba(255,174,0,0.35);
+    border-radius: 22px;
+    padding: 28px;
+    text-align: center;
+}
+
+.modal-box h2 {
+    color: #ffae00;
+    margin-bottom: 15px;
+}
+
+.registration-id {
+    background: #0b0b0f;
+    border: 1px dashed #ffae00;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* =========================================================
    TOAST
-========================= */
+========================================================= */
 
-.toast{
-
-    position:fixed;
-
-    right:18px;
-
-    bottom:18px;
-
-    background:#171a22;
-
-    border:
-    1px solid #3c414e;
-
-    padding:14px 16px;
-
-    border-radius:14px;
-
-    box-shadow:var(--shadow);
-
-    display:none;
-
-    z-index:200;
-
-    font-weight:800;
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1e1e25;
+    border: 1px solid #444;
+    padding: 14px 20px;
+    border-radius: 12px;
+    z-index: 9000;
+    transition: 0.3s;
+    opacity: 0;
 }
 
-.toast.show{
-
-    display:block;
-
-    animation:
-    pop .2s ease;
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
-@keyframes pop{
+/* =========================================================
+   NOTICE
+========================================================= */
 
-    from{
-        transform:translateY(10px);
-        opacity:0;
-    }
-
-    to{
-        transform:none;
-        opacity:1;
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .heroGrid,
-    .grid2{
-        grid-template-columns:1fr;
-    }
-
-    .matches{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .stats{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .prizes,
-    .memes,
-    .reels{
-        grid-template-columns:
-        1fr 1fr;
-    }
-
-    .heroArt{
-        min-height:320px;
-    }
-}
-
-@media(max-width:620px){
-
-    .navlinks{
-        display:none;
-    }
-
-    .hero{
-        padding-top:45px;
-    }
-
-    h1{
-        font-size:56px;
-    }
-
-    .matches,
-    .prizes,
-    .memes,
-    .reels,
-    .rules,
-    .formGrid{
-        grid-template-columns:1fr;
-    }
-
-    .paybox{
-        grid-template-columns:1fr;
-    }
-
-    .qr{
-        margin:auto;
-    }
-
-    .full{
-        grid-column:auto;
-    }
-
-    .card{
-        padding:18px;
-    }
-
-    h2{
-        font-size:36px;
-    }
+.notice {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,174,0,0.07);
+    border: 1px solid rgba(255,174,0,0.2);
+    color: #ccc;
+    font-size: 13px;
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
+<!-- =======================================================
      HEADER
-========================= -->
+======================================================= -->
 
 <header>
 
-<div class="container nav">
+<div class="container navbar">
 
-<div class="logo">
-JALGAON <b>BGMI</b> SHOWDOWN
-</div>
+    <div class="logo">
+        JALGAON <span>BGMI</span>
+    </div>
 
-<nav class="navlinks">
+    <ul class="nav-links">
 
-<a href="#matches">Matches</a>
+        <li>
+            <a href="#matches">Matches</a>
+        </li>
 
-<a href="#register">Register</a>
+        <li>
+            <a href="#register">Register</a>
+        </li>
 
-<a href="#prizes">Prizes</a>
+        <li>
+            <a href="#payment">Payment</a>
+        </li>
 
-<a href="#reels">Reels</a>
+        <li>
+            <a href="#prizes">Prizes</a>
+        </li>
 
-<a href="#rules">Rules</a>
+        <li>
+            <a href="#support">Support</a>
+        </li>
 
-<a class="navbtn"
-   href="#register">
-₹30 / Player
-</a>
-
-</nav>
+    </ul>
 
 </div>
 
 </header>
 
 
-
-<main>
-
-
-<!-- =========================
+<!-- =======================================================
      HERO
-========================= -->
+======================================================= -->
 
 <section class="hero">
 
-<div class="container heroGrid">
+<div class="container hero-content">
 
+    <div class="badge">
+        🔥 JALGAON ESPORTS EVENT 2026
+    </div>
 
-<div>
+    <h1>
+        JALGAON<br>
+        <span>BGMI SHOWDOWN</span>
+    </h1>
 
-<span class="badge">
+    <p class="hero-subtitle">
+        Drop in. Fight hard. Clutch harder.
+        Jalgaon players, this lobby is yours.
+    </p>
 
-🔥 Jalgaon • Maharashtra •
-29 September 2026
+    <div class="location">
+        📍 Jalgaon, Maharashtra — 425001
+    </div>
 
-</span>
+    <div class="countdown-title">
+        TOURNAMENT STARTS IN
+    </div>
 
+    <div class="countdown">
 
-<h1>
+        <div class="time-box">
+            <strong id="days">00</strong>
+            <span>Days</span>
+        </div>
 
-Drop In.<br>
+        <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+        </div>
 
-<span>Clutch Up.</span><br>
+        <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+        </div>
 
-Own Jalgaon.
+        <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+        </div>
 
-</h1>
+    </div>
 
+    <div class="btn-row">
 
-<p>
+        <a
+            href="#register"
+            class="btn btn-primary">
+            🎮 REGISTER NOW
+        </a>
 
-Professional-style BGMI tournament
-registration with Squad, Duo and Solo
-battles.
+        <a
+            href="#payment"
+            class="btn btn-secondary">
+            💳 PAYMENT
+        </a>
 
-₹30 per player.
-
-Bring your aim, your squad and your
-Jalgaon josh.
-
-</p>
-
-
-<div class="actions">
-
-<a class="btn primary"
-   href="#register">
-
-🎮 REGISTER NOW
-
-</a>
-
-
-<a class="btn secondary"
-   href="#prizes">
-
-🏆 SEE PRIZES
-
-</a>
-
-</div>
-
-
-<div class="notice">
-
-⚡ Funny rule of the lobby:
-
-Ping 999?
-
-No excuse.
-
-Chicken dinner still has to be earned! 😂
-
-</div>
-
-</div>
-
-
-
-<!-- ORIGINAL GAMING ART -->
-
-<div class="heroArt">
-
-<div class="screen">
-
-<div class="moon"></div>
-
-<div class="hill"></div>
-
-<div class="character">
-
-🪖
-
-</div>
-
-<div class="memeBubble">
-
-“Bhai cover de!” 😂
-
-</div>
-
-</div>
-
-</div>
-
+    </div>
 
 </div>
 
 </section>
 
 
-
-<!-- =========================
-     STATS
-========================= -->
-
-<div class="container stats">
-
-
-<div class="stat">
-
-<strong>₹30</strong>
-
-<small>
-ENTRY / PLAYER
-</small>
-
-</div>
-
-
-<div class="stat">
-
-<strong>5</strong>
-
-<small>
-MATCH SLOTS
-</small>
-
-</div>
-
-
-<div class="stat">
-
-<strong>1–4</strong>
-
-<small>
-PLAYERS / ENTRY
-</small>
-
-</div>
-
-
-<div class="stat">
-
-<strong>29 SEP</strong>
-
-<small>
-TOURNAMENT DATE
-</small>
-
-</div>
-
-
-</div>
-
-
-
-<!-- =========================
+<!-- =======================================================
      MATCHES
-========================= -->
+======================================================= -->
 
 <section id="matches">
 
 <div class="container">
 
+<div class="section-heading">
 
-<div class="sectionTitle">
+    <div class="small">
+        TOURNAMENT FORMAT
+    </div>
 
-<div>
-
-<div class="eyebrow">
-Choose your battlefield
-</div>
-
-<h2>
-Match Format
-</h2>
+    <h2>Choose Your Battle</h2>
 
 </div>
 
 
-<div class="sub">
-
-Select a format below.
-
-The registration form automatically
-calculates the entry fee.
-
-</div>
-
-</div>
+<div class="matches-grid">
 
 
+<div class="match-card">
 
-<div class="matches">
+    <div class="match-icon">👑</div>
 
+    <h3>Squad Match</h3>
 
-<div class="match">
+    <p>4 Players</p>
 
-<div class="emoji">
-👥
-</div>
-
-<b>
-Squad
-</b>
-
-<span class="price">
-₹120 / squad
-</span>
-
-<div class="players">
-4 players • 1 match
-</div>
+    <p class="price">₹120 / Squad</p>
 
 </div>
 
 
+<div class="match-card">
 
-<div class="match">
+    <div class="match-icon">🔥</div>
 
-<div class="emoji">
-🔥
-</div>
+    <h3>Duo Match 1</h3>
 
-<b>
-Duo Match 1
-</b>
+    <p>2 Players</p>
 
-<span class="price">
-₹60 / duo
-</span>
-
-<div class="players">
-2 players
-</div>
+    <p class="price">₹60 / Duo</p>
 
 </div>
 
 
+<div class="match-card">
 
-<div class="match">
+    <div class="match-icon">⚡</div>
 
-<div class="emoji">
-⚡
-</div>
+    <h3>Duo Match 2</h3>
 
-<b>
-Duo Match 2
-</b>
+    <p>2 Players</p>
 
-<span class="price">
-₹60 / duo
-</span>
-
-<div class="players">
-2 players
-</div>
+    <p class="price">₹60 / Duo</p>
 
 </div>
 
 
+<div class="match-card">
 
-<div class="match">
+    <div class="match-icon">🎯</div>
 
-<div class="emoji">
-🎯
-</div>
+    <h3>Solo Match 1</h3>
 
-<b>
-Solo Match 1
-</b>
+    <p>1 Player</p>
 
-<span class="price">
-₹30 / player
-</span>
-
-<div class="players">
-1 player
-</div>
+    <p class="price">₹30 / Player</p>
 
 </div>
 
 
+<div class="match-card">
 
-<div class="match">
+    <div class="match-icon">💀</div>
 
-<div class="emoji">
-💀
-</div>
+    <h3>Solo Match 2</h3>
 
-<b>
-Solo Match 2
-</b>
+    <p>1 Player</p>
 
-<span class="price">
-₹30 / player
-</span>
-
-<div class="players">
-1 player
-</div>
+    <p class="price">₹30 / Player</p>
 
 </div>
 
@@ -1622,71 +966,63 @@ Solo Match 2
 </section>
 
 
-
-<!-- =========================
+<!-- =======================================================
      REGISTRATION
-========================= -->
+======================================================= -->
 
 <section id="register">
 
-<div class="container grid2">
+<div class="container">
 
+<div class="section-heading">
 
-<div class="card">
+    <div class="small">
+        PLAYER REGISTRATION
+    </div>
 
+    <h2>Enter The Lobby</h2>
 
-<div class="eyebrow">
-Secure your slot
 </div>
 
-<h2>
-Registration
-</h2>
+
+<div class="registration-box">
+
+<form id="registrationForm">
 
 
-<p class="sub">
-
-Fill player details exactly as they
-appear in BGMI.
-
-Your browser will generate a
-registration receipt after submission.
-
-</p>
+<div class="form-grid">
 
 
-<form id="regForm">
+<div class="form-group full">
 
-
-<div class="formGrid">
-
-
-<div>
-
-<label for="match">
-MATCH
+<label>
+Select Match
 </label>
 
-<select id="match" required>
+<select id="matchType" required>
 
-<option value="squad">
-Squad — 4 Players — ₹120
+<option value="">
+-- Select Match --
 </option>
 
-<option value="duo1">
-Duo Match 1 — 2 Players — ₹60
+<option value="Squad">
+Squad Match — ₹120 — 4 Players
 </option>
 
-<option value="duo2">
-Duo Match 2 — 2 Players — ₹60
+<option value="Duo Match 1">
+Duo Match 1 — ₹60 — 2 Players
 </option>
 
-<option value="solo1">
-Solo Match 1 — 1 Player — ₹30
+<option value="Duo Match 2">
+Duo Match 2 — ₹60 — 2 Players
 </option>
 
-<option value="solo2">
-Solo Match 2 — 1 Player — ₹30
+<option value="Solo Match 1">
+Solo Match 1 — ₹30 — 1 Player
+</option>
+
+<option value="Solo Match 2">
+Solo Match 2 — ₹30 — 1 Player
 </option>
 
 </select>
@@ -1694,164 +1030,549 @@ Solo Match 2 — 1 Player — ₹30
 </div>
 
 
+<div class="form-group">
 
-<div>
-
-<label for="team">
-TEAM / PLAYER NAME
+<label>
+Team / Player Name
 </label>
 
 <input
-id="team"
-required
-placeholder="Example: Jalgaon Warriors">
+    type="text"
+    id="teamName"
+    placeholder="Enter team/player name"
+    required>
 
 </div>
 
 
+<div class="form-group">
 
-<div>
-
-<label for="email">
-EMAIL
+<label>
+Mobile Number
 </label>
 
 <input
-id="email"
-type="email"
-required
-placeholder="you@example.com">
+    type="tel"
+    id="mobile"
+    placeholder="10 digit mobile number"
+    maxlength="10"
+    required>
 
 </div>
 
 
+<div class="form-group full">
 
-<div>
-
-<label for="mobile">
-MOBILE
+<label>
+Email Address
 </label>
 
 <input
-id="mobile"
-type="tel"
-inputmode="numeric"
-pattern="[0-9]{10}"
-required
-placeholder="10 digit mobile">
+    type="email"
+    id="email"
+    placeholder="you@example.com"
+    required>
 
 </div>
 
 
-
-<div id="players"
-     class="full">
 </div>
 
 
+<div id="playersContainer"></div>
 
-<div class="full">
+
+<div class="notice">
+
+⚠️ Enter your BGMI UID exactly as shown in your BGMI profile.
+Incorrect UID may cause problems during room entry.
+
+</div>
+
 
 <button
-class="btn primary"
-style="width:100%"
-type="submit">
+    type="submit"
+    class="btn btn-primary"
+    style="width:100%; margin-top:20px;">
 
-GENERATE REGISTRATION RECEIPT →
+    🎮 CONTINUE TO PAYMENT
 
 </button>
 
-</div>
-
-
-</div>
 
 </form>
 
 </div>
 
+</div>
+
+</section>
 
 
-<!-- =========================
+<!-- =======================================================
      PAYMENT
-========================= -->
+======================================================= -->
 
-<div class="card">
+<section id="payment">
 
+<div class="container">
 
-<div class="eyebrow">
-Payment
-</div>
+<div class="section-heading">
 
-<h2>
-Pay Entry Fee
-</h2>
+    <div class="small">
+        SECURE PAYMENT
+    </div>
 
-
-<div class="paybox">
-
-
-<div class="qr">
-
-<div>
-
-<div class="qrPattern">
-▦
-</div>
-
-<small>
-
-UPI QR<br>
-
-Scan with any UPI app
-
-</small>
-
-</div>
+    <h2>Pay Your Entry Fee</h2>
 
 </div>
 
 
+<div class="payment-card">
 
-<div>
+<h3>
+💳 Tournament Entry
+</h3>
 
-<p>
-
-<b>
-UPI ID
-</b>
-
+<p class="payment-amount">
+Entry fee starts from
+<strong>₹30</strong>
 </p>
 
 
-<div class="upi"
-id="upiText">
+<div class="qr-box">
 
-BHARATPE2M0W0A8GOU27213@unitype
+<img
+    src="bharatpe-qr.jpg"
+    alt="BharatPe Payment QR Code"
+    class="payment-qr">
 
 </div>
 
 
+<p class="upi-label">
+PAY USING UPI ID
+</p>
 
-<div class="actions">
+
+<div class="upi-id">
+BHARATPE2M0W0A8GOU27213@unitype
+</div>
+
+
+<div class="payment-buttons">
 
 
 <button
-class="btn secondary"
-type="button"
-onclick="copyUPI()">
+    type="button"
+    class="btn btn-primary"
+    onclick="copyUPI()">
 
-📋 COPY UPI
+    📋 COPY UPI ID
 
 </button>
 
 
 <a
-class="btn primary"
-id="upiPay"
-href="#">
+    href="upi://pay?pa=BHARATPE2M0W0A8GOU27213@unitype&pn=Jalgaon%20BGMI%20Tournament&am=30&cu=INR"
+    class="btn btn-success">
 
-💳 OPEN UPI APP
+    📱 OPEN UPI APP
+
+</a>
+
+
+<button
+    type="button"
+    class="btn btn-secondary"
+    onclick="showPaymentModal()">
+
+    ✅ I'VE COMPLETED PAYMENT
+
+</button>
+
+
+</div>
+
+
+<p class="payment-note">
+
+On Android/mobile, "Open UPI App" may show installed
+UPI applications such as PhonePe, Google Pay, Paytm,
+BHIM or another supported UPI app.
+
+</p>
+
+
+<div class="security-note">
+
+🔒 Never share your UPI PIN, OTP, CVV or banking password.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     PRIZES
+======================================================= -->
+
+<section id="prizes">
+
+<div class="container">
+
+<div class="section-heading">
+
+    <div class="small">
+        PRIZE POOL
+    </div>
+
+    <h2>Battle For The Prize</h2>
+
+</div>
+
+
+<div class="prize-grid">
+
+
+<div class="prize-card">
+
+<h3>👑 SQUAD</h3>
+
+<ul>
+
+<li>
+Top 10 Players — ₹500 each
+</li>
+
+<li>
+Top 5 — ₹1,001 each
+</li>
+
+<li>
+Winning Squad — 4 × ₹3,000
+</li>
+
+<li>
+🏆 Winning Squad Total — ₹12,000
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="prize-card">
+
+<h3>🔥 DUO</h3>
+
+<ul>
+
+<li>
+Top 10 Players — ₹500 each
+</li>
+
+<li>
+Top 5 — ₹1,001 each
+</li>
+
+<li>
+Top 2 Duos — 4 Players × ₹4,000
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="prize-card">
+
+<h3>🎯 SOLO</h3>
+
+<ul>
+
+<li>
+Top 10 — ₹700 each
+</li>
+
+<li>
+Top 5 — ₹1,200 each
+</li>
+
+<li>
+Top 3 — ₹5,000 each
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+Prize distribution should follow the final tournament rules
+announced by the organizer. Clarify whether prize tiers
+are cumulative or replacement tiers before the event.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     JALGAON FUN
+======================================================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+    <div class="small">
+        JALGAON ENERGY
+    </div>
+
+    <h2>Lobby Mein Jalgaon Ka Jalwa 🔥</h2>
+
+</div>
+
+
+<div class="fun-grid">
+
+
+<div class="fun-card">
+
+<div class="emoji">😂</div>
+
+<h3>
+"Bhai Cover De!"
+</h3>
+
+<p>
+Cover maangne wala teammate,
+khud sabse pehle rush karega.
+</p>
+
+</div>
+
+
+<div class="fun-card">
+
+<div class="emoji">📶</div>
+
+<h3>
+Ping 999
+</h3>
+
+<p>
+Enemy nahi mila?
+Ping ne pehle knock kar diya.
+</p>
+
+</div>
+
+
+<div class="fun-card">
+
+<div class="emoji">🍗</div>
+
+<h3>
+Chicken Dinner
+</h3>
+
+<p>
+Jalgaon chi dharti,
+aata lobby madhye aapli baari!
+</p>
+
+</div>
+
+
+<div class="fun-card">
+
+<div class="emoji">🔥</div>
+
+<h3>
+Jalgaoncha Josh
+</h3>
+
+<p>
+Squad cha hosh —
+Chicken Dinner aplich!
+</p>
+
+</div>
+
+
+<div class="fun-card">
+
+<div class="emoji">🎯</div>
+
+<h3>
+Aim On
+</h3>
+
+<p>
+Aaj drop.
+Aaj clutch.
+Aaj naam.
+</p>
+
+</div>
+
+
+<div class="fun-card">
+
+<div class="emoji">🏆</div>
+
+<h3>
+Never Give Up
+</h3>
+
+<p>
+खेळ मोठा, धाडस मोठं,
+विजयासाठी शेवटपर्यंत लढा!
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     RULES
+======================================================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+    <div class="small">
+        IMPORTANT
+    </div>
+
+    <h2>Tournament Rules</h2>
+
+</div>
+
+
+<div class="rules">
+
+<ul>
+
+<li>
+Players must provide the correct BGMI UID.
+</li>
+
+<li>
+One person should not submit duplicate registrations
+for the same match.
+</li>
+
+<li>
+Players must complete payment before the registration
+is considered ready for verification.
+</li>
+
+<li>
+Keep your payment transaction/UTR reference safely.
+</li>
+
+<li>
+Room ID and password should only be shared through
+official tournament announcements.
+</li>
+
+<li>
+The organizer may verify player details before allowing
+a player/team into the match.
+</li>
+
+<li>
+Do not share your UPI PIN, OTP, CVV or banking password.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     SUPPORT
+======================================================= -->
+
+<section id="support">
+
+<div class="container">
+
+<div class="section-heading">
+
+    <div class="small">
+        NEED HELP?
+    </div>
+
+    <h2>Contact Tournament Support</h2>
+
+</div>
+
+
+<div class="support-card">
+
+<h3>
+🎧 Tournament Support
+</h3>
+
+<p style="color:#aaa; margin-top:10px;">
+
+Registration problem?
+Payment issue?
+Wrong BGMI UID?
+Need help with room details?
+
+Contact the tournament administrator.
+
+</p>
+
+
+<div class="support-buttons">
+
+
+<a
+    href="mailto:YOUR-EMAIL@example.com?subject=Jalgaon%20BGMI%20Tournament%20Support"
+    class="btn btn-primary">
+
+    📧 EMAIL SUPPORT
+
+</a>
+
+
+<a
+    href="https://wa.me/YOURWHATSAPPNUMBER"
+    target="_blank"
+    class="btn btn-success">
+
+    💬 WHATSAPP SUPPORT
 
 </a>
 
@@ -1861,601 +1582,13 @@ href="#">
 
 <div class="notice">
 
-Payment verification is manual in this
-one-file GitHub Pages version.
-
-Keep your UPI transaction/reference ID
-and send it to the organizer if requested.
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<hr
-style="
-border:0;
-border-top:1px solid var(--line);
-margin:24px 0;
-">
-
-
-<p class="sub">
-
-⚠️ Never share your UPI PIN, OTP,
-card PIN or password with anyone.
-
-The website does not ask for these.
-
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     PRIZES
-========================= -->
-
-<section id="prizes">
-
-<div class="container">
-
-
-<div class="sectionTitle">
-
-<div>
-
-<div class="eyebrow">
-Jalgaon battle rewards
-</div>
-
-<h2>
-Prize Pool
-</h2>
-
-</div>
-
-
-<div class="sub">
-
-Prize wording below follows the
-tournament structure supplied by the
-organizer.
-
-</div>
-
-</div>
-
-
-
-<div class="prizes">
-
-
-<div class="prize">
-
-<h3>
-👥 SQUAD
-</h3>
-
-<div class="bigPrize">
-4 × ₹3,000
-</div>
-
-<ul>
-
-<li>
-Winning squad:
-4 players × ₹3,000
-</li>
-
-<li>
-Top 5:
-₹1,001 each
-</li>
-
-<li>
-Top 10:
-₹500 each
-</li>
-
-</ul>
-
-</div>
-
-
-
-<div class="prize">
-
-<h3>
-🔥 DUO
-</h3>
-
-<div class="bigPrize">
-Top 2 Duos
-</div>
-
-<ul>
-
-<li>
-Top 2 duos:
-top 4 players × ₹4,000
-</li>
-
-<li>
-Top 5:
-₹1,001 each
-</li>
-
-<li>
-Top 10:
-₹500 each
-</li>
-
-</ul>
-
-</div>
-
-
-
-<div class="prize">
-
-<h3>
-🎯 SOLO
-</h3>
-
-<div class="bigPrize">
-Top 3 × ₹5,000
-</div>
-
-<ul>
-
-<li>
-Top 3:
-₹5,000 each
-</li>
-
-<li>
-Top 5:
-₹1,200 each
-</li>
-
-<li>
-Top 10:
-₹700 each
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FUNNY JALGAON MEMES
-========================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="sectionTitle">
-
-<div>
-
-<div class="eyebrow">
-Jalgaon meme zone
-</div>
-
-<h2>
-Lobby Mein Hasna Mana Nahi 😂
-</h2>
-
-</div>
-
-
-<div class="sub">
-
-Original gaming-themed visuals and
-local jokes.
-
-</div>
-
-</div>
-
-
-
-<div class="memes">
-
-
-<article class="meme">
-
-<div class="art">
-🪖
-</div>
-
-<h3>
-“Bhai revive kar!”
-</h3>
-
-<p>
-
-Squad mate:
-“2 second.”
-
-Reality:
-
-Enemy already celebrating. 💀
-
-</p>
-
-</article>
-
-
-
-<article class="meme">
-
-<div class="art">
-🍗
-</div>
-
-<h3>
-Jalgaon chi dharti,
-chicken dinner aapli!
-</h3>
-
-<p>
-
-Drop hot.
-
-Aim hot.
-
-Confidence 100%.
-
-Aaj lobby mein naam hona chahiye!
-
-</p>
-
-</article>
-
-
-
-<article class="meme">
-
-<div class="art">
-📶
-</div>
-
-<h3>
-Ping 999?
-</h3>
-
-<p>
-
-“Network nahi,
-destiny issue hai.”
-
-Router ko mat maaro bhai.
-
-😂
-
-</p>
-
-</article>
-
-
-
-<article class="meme">
-
-<div class="art">
-🎯
-</div>
-
-<h3>
-“One tap?”
-</h3>
-
-<p>
-
-Plan:
-
-One tap.
-
-Result:
-
-27 bullets.
-
-0 confidence. 😭
-
-</p>
-
-</article>
-
-
-
-<article class="meme">
-
-<div class="art">
-🚗
-</div>
-
-<h3>
-Gaadi mili =
-Lobby ki Ferrari
-</h3>
-
-<p>
-
-Driver:
-
-Pro.
-
-Passenger:
-
-Prayer mode.
-
-Destination:
-
-Unknown.
-
-</p>
-
-</article>
-
-
-
-<article class="meme">
-
-<div class="art">
-🔥
-</div>
-
-<h3>
-Jalgaoncha Josh
-</h3>
-
-<p>
-
-खेळ मोठा,
-धाडस मोठं,
-विजयासाठी शेवटपर्यंत लढा! 💪
-
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FUNNY REELS
-========================= -->
-
-<section id="reels">
-
-<div class="container">
-
-
-<div class="sectionTitle">
-
-<div>
-
-<div class="eyebrow">
-Jalgaon entertainment
-</div>
-
-<h2>
-Funny BGMI Reels 🎬
-</h2>
-
-</div>
-
-<div class="sub">
-
-Replace these buttons with your own
-Instagram or YouTube reel links.
-
-</div>
-
-</div>
-
-
-
-<div class="reels">
-
-
-<div class="reel">
-
-<div class="reelArt">
-😂🎮
-</div>
-
-<h3>
-Jalgaon Squad Moments
-</h3>
-
-<p>
-Funny squad fails,
-revive drama and
-“Bhai cover de!” moments.
-</p>
-
-<a
-class="play"
-href="#"
-onclick="reelMessage(event)">
-
-▶ WATCH REEL
-
-</a>
-
-</div>
-
-
-
-<div class="reel">
-
-<div class="reelArt">
-🔥🍗
-</div>
-
-<h3>
-Chicken Dinner Challenge
-</h3>
-
-<p>
-Who gets the first
-Chicken Dinner?
-
-Winner gets bragging rights.
-
-</p>
-
-<a
-class="play"
-href="#"
-onclick="reelMessage(event)">
-
-▶ WATCH REEL
-
-</a>
-
-</div>
-
-
-
-<div class="reel">
-
-<div class="reelArt">
-💀😂
-</div>
-
-<h3>
-When Ping Says NO
-</h3>
-
-<p>
-999 ping.
-
-Enemy in front.
-
-Internet in another universe.
-
-</p>
-
-<a
-class="play"
-href="#"
-onclick="reelMessage(event)">
-
-▶ WATCH REEL
-
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     MOTIVATION
-========================= -->
-
-<section>
-
-<div class="container">
-
-
-<div class="card"
-style="
-text-align:center;
-padding:45px 25px;
-">
-
-
-<div class="eyebrow">
-Jalgaon Motivation
-</div>
-
-
-<h2>
-Aaj Drop.
-Aaj Clutch.
-Aaj Naam. 🔥
-</h2>
-
-
-<p
-style="
-font-size:18px;
-color:#c9ccd5;
-max-width:800px;
-margin:auto;
-">
-
-“Jalgaon chi dharti,
-aata lobby madhye aapli baari!”
+<strong>Organizer:</strong>
+Jalgaon BGMI Tournament Admin
 
 <br><br>
 
-“जळगावची माती,
-गेममध्ये आपली छाती!”
-
-<br><br>
-
-“Jalgaoncha josh,
-squad cha hosh —
-Chicken Dinner aplich!”
-
-<br><br>
-
-“खेळ मोठा,
-धाडस मोठं,
-विजयासाठी शेवटपर्यंत लढा!”
-
-</p>
-
-
-<div class="actions"
-style="
-justify-content:center;
-">
-
-<a
-class="btn primary"
-href="#register">
-
-🔥 LET'S PLAY
-
-</a>
+Replace the email address and WhatsApp number in
+the HTML with your real support details before publishing.
 
 </div>
 
@@ -2466,188 +1599,24 @@ href="#register">
 </section>
 
 
-
-<!-- =========================
-     RULES
-========================= -->
-
-<section id="rules">
-
-<div class="container">
-
-
-<div class="sectionTitle">
-
-<div>
-
-<div class="eyebrow">
-Play fair. Play hard.
-</div>
-
-<h2>
-Rules & Notes
-</h2>
-
-</div>
-
-</div>
-
-
-
-<div class="rules">
-
-
-<div class="rule">
-
-<span class="num">
-1
-</span>
-
-<div>
-
-Use the correct BGMI UID and
-in-game name.
-
-Wrong details can cause
-check-in problems.
-
-</div>
-
-</div>
-
-
-
-<div class="rule">
-
-<span class="num">
-2
-</span>
-
-<div>
-
-Do not share OTP,
-UPI PIN, card PIN or passwords
-with organizers or players.
-
-</div>
-
-</div>
-
-
-
-<div class="rule">
-
-<span class="num">
-3
-</span>
-
-<div>
-
-Keep your payment reference/
-transaction ID until your slot
-is confirmed.
-
-</div>
-
-</div>
-
-
-
-<div class="rule">
-
-<span class="num">
-4
-</span>
-
-<div>
-
-Match Room ID and Password
-should only be shared through
-the official organizer channel.
-
-</div>
-
-</div>
-
-
-
-<div class="rule">
-
-<span class="num">
-5
-</span>
-
-<div>
-
-Prize tier interpretation should
-be confirmed with the organizer
-before the tournament.
-
-</div>
-
-</div>
-
-
-
-<div class="rule">
-
-<span class="num">
-6
-</span>
-
-<div>
-
-Jalgaon josh allowed.
-
-Toxicity, cheating and abusive
-behaviour are not.
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-
-
-<!-- =========================
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================= -->
 
 <footer>
 
-<div class="container footerFlex">
+<div class="container">
 
-<div>
+<p>
+© 2026 Jalgaon BGMI Tournament
+</p>
 
-<b>
-JALGAON BGMI SHOWDOWN 2026
-</b>
+<p style="margin-top:5px;">
+Jalgaon, Maharashtra — 425001
+</p>
 
-<br>
-
-29 September 2026
-•
-Jalgaon, Maharashtra 425001
-
-</div>
-
-
-<div>
-
-Jalgaon chi dharti ❤️
-
-<br>
-
-Aaj drop • Aaj clutch • Aaj naam!
-
+<div class="footer-admin">
+Organizer controlled website • Public registration
 </div>
 
 </div>
@@ -2655,491 +1624,825 @@ Aaj drop • Aaj clutch • Aaj naam!
 </footer>
 
 
+<!-- =======================================================
+     PAYMENT MODAL
+======================================================= -->
 
 <div
-class="toast"
-id="toast">
+    class="modal"
+    id="paymentModal">
+
+<div class="modal-box">
+
+<h2>
+Payment Confirmation
+</h2>
+
+<p>
+After completing your UPI payment,
+enter the transaction / UTR reference below.
+</p>
+
+
+<input
+    type="text"
+    id="utrNumber"
+    placeholder="Enter UTR / Transaction ID"
+    style="margin-top:15px;">
+
+
+<button
+    class="btn btn-success"
+    style="width:100%; margin-top:12px;"
+    onclick="completePayment()">
+
+    SUBMIT PAYMENT DETAILS
+
+</button>
+
+
+<button
+    class="btn btn-secondary"
+    style="width:100%; margin-top:10px;"
+    onclick="closePaymentModal()">
+
+    CANCEL
+
+</button>
+
 </div>
 
+</div>
+
+
+<!-- =======================================================
+     REGISTRATION SUCCESS MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="successModal">
+
+<div class="modal-box">
+
+<h2>
+🎉 Registration Saved
+</h2>
+
+<p>
+Your browser has created a registration ID.
+Keep this ID safely.
+</p>
+
+
+<div
+    class="registration-id"
+    id="registrationIdDisplay">
+
+</div>
+
+
+<p
+    id="successDetails"
+    style="color:#aaa; font-size:13px;">
+</p>
+
+
+<button
+    class="btn btn-primary"
+    style="width:100%; margin-top:15px;"
+    onclick="copyRegistration()">
+
+    📋 COPY REGISTRATION ID
+
+</button>
+
+
+<button
+    class="btn btn-secondary"
+    style="width:100%; margin-top:10px;"
+    onclick="closeSuccessModal()">
+
+    CLOSE
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =======================================================
+     TOAST
+======================================================= -->
+
+<div
+    class="toast"
+    id="toast">
+
+    Done!
+
+</div>
 
 
 <script>
 
-/* ==================================
-   TOURNAMENT SETTINGS
-================================== */
+/* =========================================================
+   SETTINGS
+========================================================= */
 
-const UPI =
-"BHARATPE2M0W0A8GOU27213@unitype";
+const TOURNAMENT_DATE =
+    "2026-09-29T00:00:00+05:30";
 
-
-const configs = {
-
-    squad:4,
-
-    duo1:2,
-
-    duo2:2,
-
-    solo1:1,
-
-    solo2:1
-
-};
+const UPI_ID =
+    "BHARATPE2M0W0A8GOU27213@unitype";
 
 
-const fees = {
+/* =========================================================
+   COUNTDOWN
+========================================================= */
 
-    squad:120,
+function updateCountdown() {
 
-    duo1:60,
+    const target =
+        new Date(TOURNAMENT_DATE).getTime();
 
-    duo2:60,
+    const now =
+        new Date().getTime();
 
-    solo1:30,
-
-    solo2:30
-
-};
-
-
-const labels = {
-
-    squad:"Squad Player",
-
-    duo1:"Duo 1 Player",
-
-    duo2:"Duo 2 Player",
-
-    solo1:"Solo Player",
-
-    solo2:"Solo Player"
-
-};
+    const difference =
+        target - now;
 
 
+    if (difference <= 0) {
 
-/* ==================================
-   FORM ELEMENTS
-================================== */
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
-const match =
-document.getElementById("match");
-
-const players =
-document.getElementById("players");
-
+        return;
+    }
 
 
-/* ==================================
-   GENERATE PLAYER FIELDS
-================================== */
-
-function renderPlayers(){
-
-    const count =
-    configs[match.value];
-
-    players.innerHTML="";
+    const days =
+        Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
 
 
-    for(
-        let i=1;
-        i<=count;
+    const hours =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000 * 60))
+            /
+            1000
+        );
+
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* =========================================================
+   MATCH PLAYER COUNT
+========================================================= */
+
+const matchType =
+    document.getElementById("matchType");
+
+const playersContainer =
+    document.getElementById("playersContainer");
+
+
+matchType.addEventListener(
+    "change",
+    generatePlayerFields
+);
+
+
+function generatePlayerFields() {
+
+    const selected =
+        matchType.value;
+
+    let playerCount = 0;
+
+
+    if (selected === "Squad") {
+        playerCount = 4;
+    }
+
+    else if (
+        selected === "Duo Match 1" ||
+        selected === "Duo Match 2"
+    ) {
+        playerCount = 2;
+    }
+
+    else if (
+        selected === "Solo Match 1" ||
+        selected === "Solo Match 2"
+    ) {
+        playerCount = 1;
+    }
+
+
+    playersContainer.innerHTML = "";
+
+
+    for (
+        let i = 1;
+        i <= playerCount;
         i++
-    ){
+    ) {
 
         const box =
-        document.createElement("div");
+            document.createElement("div");
 
         box.className =
-        "playerBox";
+            "player-box";
 
 
         box.innerHTML = `
 
-        <h4>
-        ${labels[match.value]} ${i}
-        </h4>
+            <div class="player-title">
+                PLAYER ${i}
+            </div>
 
-        <div class="formGrid">
+            <div class="player-grid">
 
-        <div>
+                <div>
 
-        <label>
-        BGMI PLAYER NAME
-        </label>
+                    <label>
+                        BGMI Player Name
+                    </label>
 
-        <input
-        name="pname${i}"
-        required
-        placeholder="In-game name">
+                    <input
+                        type="text"
+                        class="player-name"
+                        placeholder="BGMI name"
+                        required>
 
-        </div>
+                </div>
 
 
-        <div>
+                <div>
 
-        <label>
-        BGMI UID
-        </label>
+                    <label>
+                        BGMI UID
+                    </label>
 
-        <input
-        name="uid${i}"
-        required
-        inputmode="numeric"
-        placeholder="Numeric BGMI UID">
+                    <input
+                        type="text"
+                        class="player-uid"
+                        placeholder="BGMI UID"
+                        required>
 
-        </div>
+                </div>
 
-        </div>
-
+            </div>
         `;
 
-        players.appendChild(box);
 
+        playersContainer.appendChild(box);
     }
-
 }
 
 
-match.addEventListener(
-    "change",
-    renderPlayers
-);
-
-renderPlayers();
-
-
-
-/* ==================================
-   TOAST
-================================== */
-
-function toast(message){
-
-    const t =
-    document.getElementById("toast");
-
-    t.textContent =
-    message;
-
-    t.classList.add("show");
-
-
-    clearTimeout(
-        window.__toast
-    );
-
-
-    window.__toast =
-    setTimeout(
-        ()=>{
-            t.classList.remove("show");
-        },
-        2600
-    );
-
-}
-
-
-
-/* ==================================
+/* =========================================================
    COPY UPI
-================================== */
+========================================================= */
 
-function copyUPI(){
+function copyUPI() {
 
-    if(
-        navigator.clipboard
-    ){
+    navigator.clipboard
+        .writeText(UPI_ID)
+        .then(() => {
 
-        navigator.clipboard
-        .writeText(UPI)
-        .then(
-            ()=>{
-                toast(
-                    "UPI ID copied ✅"
-                );
-            }
-        )
-        .catch(
-            ()=>{
-                toast(
-                    "UPI ID: "+UPI
-                );
-            }
-        );
+            showToast(
+                "UPI ID copied!"
+            );
 
-    }else{
+        })
+        .catch(() => {
 
-        toast(
-            "UPI ID: "+UPI
-        );
-
-    }
-
-}
-
-
-
-/* ==================================
-   UPI PAYMENT BUTTON
-================================== */
-
-document
-.getElementById("upiPay")
-.href =
-"upi://pay?pa="
-+
-encodeURIComponent(UPI)
-+
-"&pn="
-+
-encodeURIComponent(
-    "Jalgaon BGMI Showdown"
-)
-+
-"&cu=INR";
-
-
-
-/* ==================================
-   REGISTRATION
-================================== */
-
-document
-.getElementById("regForm")
-.addEventListener(
-"submit",
-function(e){
-
-    e.preventDefault();
-
-
-    const formData =
-    new FormData(e.target);
-
-
-    const type =
-    match.value;
-
-
-    const count =
-    configs[type];
-
-
-    const playerData=[];
-
-
-    for(
-        let i=1;
-        i<=count;
-        i++
-    ){
-
-        playerData.push({
-
-            name:
-            formData.get(
-                "pname"+i
-            ),
-
-            uid:
-            formData.get(
-                "uid"+i
-            )
+            alert(
+                "UPI ID: " + UPI_ID
+            );
 
         });
+}
 
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+function showPaymentModal() {
+
+    document
+        .getElementById("paymentModal")
+        .classList.add("active");
+
+}
+
+
+function closePaymentModal() {
+
+    document
+        .getElementById("paymentModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   REGISTRATION
+========================================================= */
+
+document
+    .getElementById("registrationForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const match =
+                document.getElementById(
+                    "matchType"
+                ).value;
+
+
+            const team =
+                document.getElementById(
+                    "teamName"
+                ).value.trim();
+
+
+            const mobile =
+                document.getElementById(
+                    "mobile"
+                ).value.trim();
+
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value.trim();
+
+
+            if (!match) {
+
+                alert(
+                    "Please select a match."
+                );
+
+                return;
+            }
+
+
+            if (
+                !/^[0-9]{10}$/.test(mobile)
+            ) {
+
+                alert(
+                    "Please enter a valid 10 digit mobile number."
+                );
+
+                return;
+            }
+
+
+            const names =
+                document.querySelectorAll(
+                    ".player-name"
+                );
+
+
+            const uids =
+                document.querySelectorAll(
+                    ".player-uid"
+                );
+
+
+            const players = [];
+
+
+            const uidSet =
+                new Set();
+
+
+            for (
+                let i = 0;
+                i < uids.length;
+                i++
+            ) {
+
+                const name =
+                    names[i].value.trim();
+
+                const uid =
+                    uids[i].value.trim();
+
+
+                if (!name || !uid) {
+
+                    alert(
+                        "Please complete all player details."
+                    );
+
+                    return;
+                }
+
+
+                if (uidSet.has(uid)) {
+
+                    alert(
+                        "Duplicate BGMI UID found in this registration."
+                    );
+
+                    return;
+                }
+
+
+                uidSet.add(uid);
+
+
+                players.push({
+
+                    name: name,
+
+                    uid: uid
+
+                });
+
+            }
+
+
+            const existing =
+                JSON.parse(
+                    localStorage.getItem(
+                        "jalgaonBGMIRegistrations"
+                    ) || "[]"
+                );
+
+
+            for (const player of players) {
+
+                const duplicate =
+                    existing.some(
+                        r =>
+                            r.players &&
+                            r.players.some(
+                                p =>
+                                    p.uid === player.uid &&
+                                    r.match === match
+                            )
+                    );
+
+
+                if (duplicate) {
+
+                    alert(
+                        "This BGMI UID already has a registration for this match on this browser."
+                    );
+
+                    return;
+                }
+            }
+
+
+            const registration = {
+
+                registrationId:
+                    createRegistrationId(),
+
+                match: match,
+
+                teamName: team,
+
+                mobile: mobile,
+
+                email: email,
+
+                players: players,
+
+                paymentUTR: "",
+
+                paymentStatus:
+                    "Pending",
+
+                createdAt:
+                    new Date().toISOString()
+
+            };
+
+
+            existing.push(
+                registration
+            );
+
+
+            localStorage.setItem(
+
+                "jalgaonBGMIRegistrations",
+
+                JSON.stringify(existing)
+
+            );
+
+
+            window.currentRegistration =
+                registration;
+
+
+            document.getElementById(
+                "payment"
+            ).scrollIntoView({
+                behavior: "smooth"
+            });
+
+
+            showToast(
+                "Registration details saved. Complete payment next."
+            );
+
+
+            setTimeout(
+                showPaymentModal,
+                700
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   REGISTRATION ID
+========================================================= */
+
+function createRegistrationId() {
+
+    const random =
+        Math.random()
+            .toString(36)
+            .substring(2, 8)
+            .toUpperCase();
+
+    return "JBGMI-" + random;
+}
+
+
+/* =========================================================
+   PAYMENT COMPLETE
+========================================================= */
+
+function completePayment() {
+
+    const utr =
+        document
+            .getElementById("utrNumber")
+            .value
+            .trim();
+
+
+    if (!utr) {
+
+        alert(
+            "Please enter your UTR / transaction reference."
+        );
+
+        return;
     }
 
 
-
-    /* ==============================
-       UNIQUE REGISTRATION ID
-    ============================== */
-
-    const today =
-    new Date()
-    .toISOString()
-    .slice(0,10)
-    .replaceAll("-","");
+    const registration =
+        window.currentRegistration;
 
 
-    const random =
-    Math.random()
-    .toString(36)
-    .slice(2,7)
-    .toUpperCase();
+    if (!registration) {
+
+        alert(
+            "Please complete registration first."
+        );
+
+        closePaymentModal();
+
+        return;
+    }
 
 
-    const registrationID =
-    "JBGMI-"
-    +
-    today
-    +
-    "-"
-    +
-    random;
+    registration.paymentUTR =
+        utr;
+
+    registration.paymentStatus =
+        "Submitted for Verification";
 
 
-
-    const registration = {
-
-        registrationId:
-        registrationID,
-
-        match:
-        type,
-
-        team:
-        formData.get("team"),
-
-        email:
-        formData.get("email"),
-
-        mobile:
-        formData.get("mobile"),
-
-        fee:
-        fees[type],
-
-        players:
-        playerData,
-
-        createdAt:
-        new Date().toISOString()
-
-    };
+    const all =
+        JSON.parse(
+            localStorage.getItem(
+                "jalgaonBGMIRegistrations"
+            ) || "[]"
+        );
 
 
+    const index =
+        all.findIndex(
+            r =>
+                r.registrationId ===
+                registration.registrationId
+        );
 
-    /* ==============================
-       SAVE TO THIS BROWSER
-    ============================== */
+
+    if (index !== -1) {
+
+        all[index] =
+            registration;
+
+    }
+
 
     localStorage.setItem(
 
-        "jalgaonBgmiLastRegistration",
+        "jalgaonBGMIRegistrations",
 
-        JSON.stringify(
-            registration
-        )
+        JSON.stringify(all)
 
     );
 
 
-
-    /* ==============================
-       RECEIPT
-    ============================== */
-
-    const receipt = [
-
-        "JALGAON BGMI SHOWDOWN 2026",
-
-        "================================",
-
-        "Registration ID: "
-        + registrationID,
-
-        "Match: "
-        + type.toUpperCase(),
-
-        "Team/Player: "
-        + registration.team,
-
-        "Fee: ₹"
-        + registration.fee,
-
-        "",
-
-        ...playerData.map(
-            (p,i)=>
-            "Player "
-            +(i+1)
-            +": "
-            +p.name
-            +" | UID: "
-            +p.uid
-        ),
-
-        "",
-
-        "UPI: "
-        + UPI,
-
-        "",
-
-        "Keep your payment reference",
-        "for tournament confirmation."
-
-    ].join("\n");
+    closePaymentModal();
 
 
+    document.getElementById(
+        "registrationIdDisplay"
+    ).textContent =
+        registration.registrationId;
 
-    /* ==============================
-       COPY RECEIPT
-    ============================== */
 
-    if(
-        navigator.clipboard
-    ){
+    document.getElementById(
+        "successDetails"
+    ).innerHTML = `
 
-        navigator.clipboard
-        .writeText(receipt)
-        .catch(
-            ()=>{}
+        Match:
+        <strong>
+        ${escapeHtml(registration.match)}
+        </strong>
+
+        <br><br>
+
+        Payment reference:
+        <strong>
+        ${escapeHtml(utr)}
+        </strong>
+
+        <br><br>
+
+        Status:
+        <strong>
+        Submitted for Verification
+        </strong>
+
+    `;
+
+
+    document.getElementById(
+        "successModal"
+    ).classList.add("active");
+
+
+    showToast(
+        "Payment details saved."
+    );
+
+}
+
+
+/* =========================================================
+   COPY REGISTRATION ID
+========================================================= */
+
+function copyRegistration() {
+
+    const id =
+        document.getElementById(
+            "registrationIdDisplay"
+        ).textContent;
+
+
+    navigator.clipboard
+        .writeText(id)
+        .then(() => {
+
+            showToast(
+                "Registration ID copied!"
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   SUCCESS MODAL
+========================================================= */
+
+function closeSuccessModal() {
+
+    document
+        .getElementById("successModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message) {
+
+    const toast =
+        document.getElementById(
+            "toast"
         );
 
-    }
+
+    toast.textContent =
+        message;
 
 
-
-    alert(
-
-        "REGISTRATION CREATED! 🎮\n\n"
-        +
-        receipt
-        +
-        "\n\n"
-        +
-        "Receipt copied to clipboard."
-
+    toast.classList.add(
+        "show"
     );
 
 
-    toast(
-        "Registration receipt generated ✅"
+    setTimeout(
+        () => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2500
     );
-
-});
-
+}
 
 
-/* ==================================
-   FUNNY REEL PLACEHOLDER
-================================== */
+/* =========================================================
+   BASIC HTML ESCAPE
+========================================================= */
 
-function reelMessage(event){
+function escapeHtml(value) {
 
-    event.preventDefault();
-
-    alert(
-
-        "🎬 Reel link not added yet.\n\n"
-        +
-        "Replace this button's # link with "
-        +
-        "your Instagram / YouTube Reel URL."
-
-    );
+    return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 
 }
 
 </script>
-
 
 </body>
 </html>
